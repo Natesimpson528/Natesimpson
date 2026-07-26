@@ -59,6 +59,24 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text);
 }
 
+.topbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.topbar-logo:hover {
+  color: var(--color-text-secondary);
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -129,6 +147,71 @@ body.sidebar-open .sidebar {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.nav-dropdown > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-dropdown > summary:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-chevron {
+  display: inline-block;
+  color: var(--color-text-muted);
+  transition: transform var(--transition-duration) var(--transition-easing);
+}
+
+.nav-dropdown[open] > summary > .nav-chevron {
+  transform: rotate(90deg);
+}
+
+.nav-dropdown-list {
+  list-style: none;
+  margin: 2px 0 0;
+  padding-left: 14px;
+}
+
+.nav-dropdown-list li + li {
+  margin-top: 2px;
+}
+
+.nav-dropdown--nested > summary {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  padding: 6px 10px;
+}
+
+.nav-dropdown-list--nested {
+  padding-left: 14px;
+}
+
+.nav-dropdown-list--nested a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.nav-dropdown-list--nested a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 /* Content */
 
 .content {
@@ -150,27 +233,39 @@ body.sidebar-open .content {
   padding: clamp(2.5rem, 8vh, 5rem) clamp(1.25rem, 5vw, 2.5rem) 4rem;
 }
 
+.content-prose--home {
+  max-width: 720px;
+}
+
 .site-title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 600;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
   color: var(--color-text);
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.35rem;
+  text-align: center;
 }
 
 .site-byline {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
   color: var(--color-text-secondary);
-  margin: 0 0 2rem;
+  margin: 0 0 3rem;
+  text-align: center;
 }
 
 .site-motto {
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: 1.15rem;
-  color: #cccccc;
-  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  margin: 0 0 2.5rem;
+  text-align: center;
 }
 
 .site-purpose {
@@ -188,6 +283,22 @@ body.sidebar-open .content {
   margin: 0 0 1.5rem;
 }
 
+/* Home page only: purpose line and divider are reused elsewhere,
+   so they stay left-aligned by default and only center here */
+.content-prose--home .site-purpose {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+.content-prose--home .site-divider {
+  width: 200px;
+  margin: 0 auto 2rem;
+}
+
 .site-toc ul {
   list-style: none;
   margin: 0;
@@ -201,6 +312,37 @@ body.sidebar-open .content {
 
 .site-toc > ul > li:last-child {
   border-bottom: none;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(1),
+.content-prose--home .site-toc > ul > li:nth-child(2) {
+  text-align: center;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) {
+  padding-left: 1.25rem;
+  padding-top: 1.75rem;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) > .toc-label {
+  font-size: 1.15rem;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) .toc-sub {
+  margin-top: 1rem;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) > .toc-sub > li {
+  font-size: 1rem;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) > .toc-sub > li > a {
+  color: #cccccc;
+}
+
+.content-prose--home .site-toc > ul > li:nth-child(3) > .toc-sub > li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.4rem;
 }
 
 .toc-label {
@@ -247,7 +389,8 @@ body.sidebar-open .content {
 
 @media (prefers-reduced-motion: reduce) {
   .sidebar,
-  .content {
+  .content,
+  .nav-chevron {
     transition: none;
   }
 }
