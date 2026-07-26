@@ -190,6 +190,20 @@ body.sidebar-open .sidebar {
   margin-top: 2px;
 }
 
+.nav-preface-link {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.nav-preface-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .nav-dropdown--nested > summary {
   font-size: 13px;
   color: var(--color-text-secondary);
