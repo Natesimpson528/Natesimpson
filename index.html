@@ -2,10 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nate Simpson</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Nate Simpson</h1>
-  <p>Under development</p>
+  <header class="topbar">
+    <button class="hamburger" id="sidebar-toggle" aria-label="Toggle sidebar" aria-controls="sidebar" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <span class="topbar-title" id="page-title">Home</span>
+  </header>
+
+  <nav class="sidebar" id="sidebar" aria-hidden="true">
+    <ul class="sidebar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Essays</a></li>
+      <li><a href="#">Map</a></li>
+    </ul>
+  </nav>
+
+  <main class="content" id="content">
+    <h1>Nate Simpson</h1>
+    <p>Under development</p>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
