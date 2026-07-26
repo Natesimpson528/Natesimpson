@@ -23,12 +23,20 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.6;
+}
+
+:target {
+  scroll-margin-top: calc(var(--topbar-height) + 16px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -260,6 +268,10 @@ body.sidebar-open .content {
   padding: clamp(2.5rem, 8vh, 5rem) clamp(1.25rem, 5vw, 2.5rem) 4rem;
 }
 
+.content-prose--article {
+  max-width: 760px;
+}
+
 .content-prose--home {
   max-width: 720px;
 }
@@ -322,6 +334,61 @@ body.sidebar-open .content {
   border: none;
   border-top: 1px solid var(--color-border);
   margin: 0 0 1.5rem;
+}
+
+.preface-essay {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.preface-essay p {
+  margin: 0 0 1.2rem;
+}
+
+.section-title {
+  margin: 2.1rem 0 0.65rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.essay-question {
+  margin-top: 2rem;
+  font-size: 1.15rem;
+}
+
+.footnote-ref {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  vertical-align: super;
+}
+
+.footnote-ref:hover {
+  color: var(--color-text);
+}
+
+.footnotes-list {
+  margin: 3rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+}
+
+.footnotes-list li + li {
+  margin-top: 0.65rem;
+}
+
+.footnote-backlink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  margin-right: 0.35rem;
+}
+
+.footnote-backlink:hover {
+  color: var(--color-text);
 }
 
 /* Home page only: purpose line and divider are reused elsewhere,
