@@ -2,6 +2,7 @@
 
 :root {
   --color-bg: #1a1a1a;
+  --color-bg-hero: #151515;
   --color-surface: #262626;
   --color-border: #333333;
   --color-text: #e8e8e8;
@@ -237,6 +238,20 @@ body.sidebar-open .content {
   max-width: 720px;
 }
 
+.home-hero {
+  background: var(--color-bg-hero);
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+.content-prose--hero {
+  padding-bottom: 0;
+}
+
+.content-prose--body {
+  padding-top: 2rem;
+}
+
 .site-title {
   font-family: var(--font-heading);
   font-size: clamp(3rem, 8vw, 5rem);
@@ -296,7 +311,7 @@ body.sidebar-open .content {
 
 .content-prose--home .site-divider {
   width: 200px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
 }
 
 .site-toc ul {
