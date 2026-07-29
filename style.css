@@ -283,6 +283,10 @@ body.sidebar-open .content {
   max-width: 760px;
 }
 
+.content-prose--part-i {
+  max-width: 760px;
+}
+
 /* Part I outline body */
 .outline {
   margin: 0;
