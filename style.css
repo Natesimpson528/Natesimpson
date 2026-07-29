@@ -283,6 +283,162 @@ body.sidebar-open .content {
   max-width: 760px;
 }
 
+/* Part I outline body */
+.outline {
+  margin: 0;
+  padding: 0;
+}
+
+.outline .outline-section {
+  margin: 0;
+  border: none;
+}
+
+.outline .outline-section summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 0;
+  margin: 0;
+  cursor: pointer;
+  list-style: none;
+  background: transparent;
+  border-radius: 0;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.outline .outline-section summary::-webkit-details-marker,
+.outline .outline-section summary::marker {
+  display: none;
+}
+
+.outline .outline-section summary:hover,
+.outline .outline-section summary:focus-visible {
+  color: #f7f7f7;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.outline .outline-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  min-width: 1.2rem;
+  color: #8c8c8c;
+  transition: transform 220ms ease;
+}
+
+.outline .outline-section[open] > summary .outline-chevron {
+  transform: rotate(90deg);
+}
+
+.outline .outline-label,
+.outline .outline-title {
+  display: inline-block;
+}
+
+.outline .outline-body {
+  margin: 0;
+  padding: 0.55rem 0 0 2rem;
+  min-height: 3.8rem;
+  transition: background-color 220ms ease;
+}
+
+.outline .outline-section.lvl1 > .outline-body {
+  background: transparent;
+}
+
+.outline .outline-section.lvl2 > .outline-body {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.outline .outline-section.lvl3 > .outline-body {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.outline .outline-section.lvl4 > .outline-body {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.outline .outline-section.lvl5 > .outline-body {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.outline .outline-leaf {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  margin: 0;
+}
+
+.outline .outline-leaf .outline-label {
+  min-width: 2.2rem;
+}
+
+.outline .outline-section.lvl1 > summary {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f2f2f2;
+  margin-top: 1.5rem;
+}
+
+.outline .outline-section.lvl1 > summary .outline-title {
+  color: #f2f2f2;
+}
+
+.outline .outline-section.lvl2 > summary {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #d9d9d9;
+  margin-top: 0.35rem;
+}
+
+.outline .outline-section.lvl2 > summary .outline-title {
+  color: #d9d9d9;
+}
+
+.outline .outline-section.lvl3 > summary {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #c4c4c4;
+  margin-top: 0.25rem;
+}
+
+.outline .outline-section.lvl3 > summary .outline-title {
+  color: #c4c4c4;
+}
+
+.outline .outline-section.lvl4 > summary,
+.outline .outline-leaf.lvl4 {
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: #b1b1b1;
+  margin-top: 0.15rem;
+}
+
+.outline .outline-section.lvl4 > summary .outline-title,
+.outline .outline-leaf.lvl4 .outline-title {
+  color: #b1b1b1;
+}
+
+.outline .outline-section.lvl5 > summary,
+.outline .outline-leaf.lvl5 {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #9d9d9d;
+}
+
+.outline .outline-section.lvl5 > summary .outline-title,
+.outline .outline-leaf.lvl5 .outline-title {
+  color: #9d9d9d;
+}
+
+.outline .outline-body > .outline-section,
+.outline .outline-body > .outline-leaf {
+  margin-top: 0.15rem;
+}
+
 .content-prose--home {
   max-width: 720px;
 }
